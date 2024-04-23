@@ -7,8 +7,26 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>AJAX Jquery</h1>
-     
+    <h1 id="texte"></h1>
+    <button id="btn">Random</button>
+  
+<script>
+    let texte = document.querySelector("#texte");
+    let randomBtn = document.querySelector("#btn");
 
+    $.get("https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1", (fact,status) => {
+        let chat = fact.text;
+        texte.textContent = chat;
+       
+    });
+
+    function boutonRandom(){
+        $.get("https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1", (fact,status) => {
+        
+
+    });
+    }
+    
+</script>
 </body>
 </html>
