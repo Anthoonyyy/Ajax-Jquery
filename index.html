@@ -8,27 +8,24 @@
 </head>
 <body>
     <h1 id="texte"></h1>
-    <button id="btn" onclick="boutonRandom()">Random</button>
+    <button id="btn" onclick="boutonRandom()">Random</button><br>
+    <br>
+    <label for="chat">Chats
+    <input type="radio" name="typeAnimal" id="chats" value="cat" checked>
+</label>
+    <label for="chiens">Chiens
+    <input type="radio" name="typeAnimal" id="chiens" value="dog">
+</label>
+    <label for="chevaux">Chevaux
+    <input type="radio" name="typeAnimal" id="chevaux" value="horse">
+</label>
   
-<script>
-    let texte = document.querySelector("#texte");
-    let randomBtn = document.querySelector("#btn");
-/*
-    $.get("https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1", (fact,status) => {
-        let chat = fact.text;
-        texte.textContent = chat;
-       
-    });
-*/
-    function boutonRandom(){
-        $.get("https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1", (fact,status) => {
-            let chat = fact.text;
-        texte.textContent = chat;
-
-    });
-    }
-    boutonRandom();
-    
-</script>
+<select name="nbAmount" id="nbAmount">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
+<script src="script.js"></script>
 </body>
 </html>
